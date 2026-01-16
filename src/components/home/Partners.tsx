@@ -26,24 +26,38 @@ export default function Partners() {
           centered
         />
 
-        {/* Partners Grid */}
+        {/* Partners Grid with Wave Animation */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
           {partners.map((partner, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0, rotate: -180 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="flex items-center justify-center p-6 bg-brand-dark hover:bg-opacity-50 transition-all duration-300 group"
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.08,
+                type: 'spring',
+                stiffness: 200
+              }}
+              whileHover={{ 
+                scale: 1.1,
+                rotate: [0, -5, 5, 0],
+                transition: { duration: 0.4 }
+              }}
+              className="flex items-center justify-center p-6 bg-brand-dark hover:bg-opacity-50 transition-all duration-300 group cursor-pointer"
             >
               <div className="relative w-full h-20 flex items-center justify-center">
                 {/* Placeholder for partner logo */}
-                <div className="text-center">
+                <motion.div 
+                  className="text-center"
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ type: 'spring', stiffness: 400 }}
+                >
                   <div className="text-white text-opacity-60 group-hover:text-opacity-100 transition-opacity duration-300 font-semibold text-sm">
                     {partner.name}
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           ))}

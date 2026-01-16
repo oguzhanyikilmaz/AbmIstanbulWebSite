@@ -47,20 +47,32 @@ export default function Testimonials() {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            {/* Quote Icon */}
-            <div className="absolute -top-8 left-0 text-brand-red opacity-20">
+            {/* Quote Icon with Floating Animation */}
+            <motion.div 
+              className="absolute -top-8 left-0 text-brand-red opacity-20"
+              animate={{ 
+                y: [0, -10, 0],
+                rotate: [0, 5, 0, -5, 0]
+              }}
+              transition={{ 
+                duration: 4,
+                repeat: Infinity,
+                ease: 'easeInOut'
+              }}
+            >
               <Quote size={80} />
-            </div>
+            </motion.div>
 
-            {/* Testimonial Content */}
+            {/* Testimonial Content with Slide Animation */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
+                initial={{ opacity: 0, x: 100, rotateY: 90 }}
+                animate={{ opacity: 1, x: 0, rotateY: 0 }}
+                exit={{ opacity: 0, x: -100, rotateY: -90 }}
+                transition={{ duration: 0.6, type: 'spring' }}
                 className="relative bg-brand-dark-lighter p-12 lg:p-16"
+                style={{ perspective: 1000 }}
               >
                 <p className="text-xl lg:text-2xl text-white leading-relaxed mb-8">
                   {testimonials[currentIndex].content}

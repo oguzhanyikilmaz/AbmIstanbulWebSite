@@ -57,16 +57,31 @@ export default function Expertise() {
           {expertiseAreas.map((area, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.8, rotateY: -30 }}
+              whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.15,
+                type: 'spring',
+                stiffness: 100
+              }}
+              whileHover={{ 
+                scale: 1.05,
+                rotateY: 5,
+                transition: { duration: 0.3 }
+              }}
+              style={{ perspective: 1000 }}
             >
               <Card className="h-full flex flex-col">
-                {/* Icon */}
-                <div className="w-16 h-16 flex items-center justify-center bg-brand-red bg-opacity-10 mb-6">
+                {/* Icon with Rotation */}
+                <motion.div 
+                  className="w-16 h-16 flex items-center justify-center bg-brand-red bg-opacity-10 mb-6"
+                  whileHover={{ rotate: 360, scale: 1.2 }}
+                  transition={{ duration: 0.6 }}
+                >
                   <area.icon className="w-8 h-8 text-brand-red" />
-                </div>
+                </motion.div>
 
                 {/* Title */}
                 <h3 className="text-2xl font-heading font-bold text-white mb-4">
@@ -76,13 +91,26 @@ export default function Expertise() {
                 {/* Description */}
                 <p className="text-brand-gray-light mb-6 flex-grow">{area.description}</p>
 
-                {/* Features */}
+                {/* Features with Stagger */}
                 <ul className="space-y-3 mb-8">
                   {area.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <span className="w-1.5 h-1.5 bg-brand-red rounded-full mt-2 mr-3 flex-shrink-0" />
+                    <motion.li 
+                      key={idx} 
+                      className="flex items-start"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + index * 0.15 + idx * 0.1 }}
+                    >
+                      <motion.span 
+                        className="w-1.5 h-1.5 bg-brand-red rounded-full mt-2 mr-3 flex-shrink-0"
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 + index * 0.15 + idx * 0.1, type: 'spring' }}
+                      />
                       <span className="text-sm text-brand-gray-light">{feature}</span>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
 

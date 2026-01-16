@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import MagneticButton from '@/components/ui/MagneticButton'
 
 const slides = [
   {
@@ -32,6 +33,11 @@ const slides = [
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  
+  // Parallax effect
+  const { scrollY } = useScroll()
+  const y = useTransform(scrollY, [0, 500], [0, 150])
+  const opacity = useTransform(scrollY, [0, 300], [1, 0])
 
   useEffect(() => {
     if (!isAutoPlaying) return
@@ -69,18 +75,24 @@ export default function Hero() {
           transition={{ duration: 0.7 }}
           className="absolute inset-0"
         >
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${slides[currentSlide].image})`,
-            }}
+          {/* Background Image with Parallax */}
+          <motion.div
+            style={{ y }}
+            className="absolute inset-0 bg-cover bg-center scale-110"
+            initial={{ scale: 1.1 }}
           >
-            <div className="overlay-dark" />
-          </div>
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${slides[currentSlide].image})`,
+              }}
+            >
+              <div className="overlay-dark" />
+            </div>
+          </motion.div>
 
-          {/* Content */}
-          <div className="relative h-full flex items-center">
+          {/* Content with Fade on Scroll */}
+          <motion.div style={{ opacity }} className="relative h-full flex items-center">
             <div className="container-custom">
               <div className="max-w-4xl">
                 {/* Slide Counter */}
@@ -103,15 +115,21 @@ export default function Hero() {
                   {slides[currentSlide].subtitle}
                 </motion.p>
 
-                {/* Title */}
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight"
-                >
-                  {slides[currentSlide].title}
-                </motion.h1>
+                {/* Title with Reveal Animation */}
+                <div className="overflow-hidden mb-6">
+                  <motion.h1
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ 
+                      delay: 0.4,
+                      duration: 0.8,
+                      ease: [0.33, 1, 0.68, 1]
+                    }}
+                    className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight"
+                  >
+                    {slides[currentSlide].title}
+                  </motion.h1>
+                </div>
 
                 {/* Description */}
                 <motion.p
@@ -135,7 +153,7 @@ export default function Hero() {
                 </motion.div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </AnimatePresence>
 
@@ -170,13 +188,12 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Video Play Button (Decorative) */}
-      <button
-        className="absolute top-1/2 right-12 -translate-y-1/2 w-16 h-16 flex items-center justify-center border-2 border-white rounded-full hover:bg-brand-red hover:border-brand-red transition-all duration-300 z-10 hidden lg:flex"
-        aria-label="Play video"
-      >
-        <Play className="w-6 h-6 text-white ml-1" fill="white" />
-      </button>
+      {/* Video Play Button with Magnetic Effect */}
+      <div className="absolute top-1/2 right-12 -translate-y-1/2 z-10 hidden lg:block">
+        <MagneticButton className="w-16 h-16 flex items-center justify-center border-2 border-white rounded-full hover:bg-brand-red hover:border-brand-red transition-all duration-300">
+          <Play className="w-6 h-6 text-white ml-1" fill="white" />
+        </MagneticButton>
+      </div>
     </section>
   )
 }
