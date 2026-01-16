@@ -5,6 +5,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   reactStrictMode: true,
+  output: 'standalone',
 }
 
 module.exports = nextConfig
