@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-space-grotesk: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-brand-dark text-white antialiased;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-white bg-brand-red hover:bg-brand-red-dark transition-all duration-300 rounded-none uppercase tracking-wider;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-white border border-white hover:bg-white hover:text-brand-dark transition-all duration-300 rounded-none uppercase tracking-wider;
+  }
+
+  /* Section Headings */
+  .section-heading {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-lg md:text-xl text-brand-gray-light max-w-3xl;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-brand-dark-lighter p-8 transition-all duration-300 hover:bg-opacity-80;
+  }
+
+  /* Links */
+  .link-underline {
+    @apply relative inline-block after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  /* Overlay */
+  .overlay-dark {
+    @apply absolute inset-0 bg-black bg-opacity-60;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
