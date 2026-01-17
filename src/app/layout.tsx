@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
+import { Inter, Heebo, Oswald } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -11,10 +11,18 @@ const inter = Inter({
   display: 'swap',
 })
 
-const spaceGrotesk = Space_Grotesk({
+const heebo = Heebo({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-heebo',
   display: 'swap',
+  weight: ['100', '300', '400', '500', '700', '900'],
+})
+
+const oswald = Oswald({
+  subsets: ['latin'],
+  variable: '--font-oswald',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
 })
 
 export const metadata: Metadata = {
@@ -35,8 +43,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="tr" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="font-sans">
+    <html lang="tr" className={`${inter.variable} ${heebo.variable} ${oswald.variable}`}>
+      <body className="font-heebo">
         <Header />
         <main>{children}</main>
         <Footer />

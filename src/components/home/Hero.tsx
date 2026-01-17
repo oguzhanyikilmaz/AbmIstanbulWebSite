@@ -9,24 +9,38 @@ import MagneticButton from '@/components/ui/MagneticButton'
 const slides = [
   {
     id: 1,
-    title: 'DHL Lojistik Hizmetleri A.Ş.',
+    title: 'DHL LOJİSTİK HİZMETLERİ A.Ş.',
     subtitle: 'Lojistik',
     description: '42.000 m² alanı kapsayan global merkez operasyonel tesisimiz',
-    image: '/images/hero/dhl-logistics.jpg',
+    image: '/images/hero/project_1.jpg',
   },
   {
     id: 2,
-    title: 'Shell & Turcas Petrol A.Ş.',
+    title: 'SHELL & TURCAS PETROL A.Ş.',
     subtitle: 'Enerji',
     description: 'Enerji sektöründe sürdürülebilir çözümler ve yenilikçi projeler',
-    image: '/images/hero/shell-energy.jpg',
+    image: '/images/hero/project_2.jpg',
   },
   {
     id: 3,
-    title: 'Hilton Garden Inn',
+    title: 'HİLTON GARDEN INN',
     subtitle: 'Gayrimenkul',
     description: 'Prestijli gayrimenkul yatırımları ve geliştirme projeleri',
-    image: '/images/hero/hilton-hotel.jpg',
+    image: '/images/hero/project_3.jpg',
+  },
+  {
+    id: 4,
+    title: 'ABM İSTANBUL TESİSLERİ',
+    subtitle: 'Genel',
+    description: 'Modern altyapı ve teknoloji ile donatılmış tesislerimiz',
+    image: '/images/aerial/aerial_5.jpg',
+  },
+  {
+    id: 5,
+    title: 'ENDÜSTRİYEL ÇÖZÜMLER',
+    subtitle: 'Lojistik',
+    description: 'Sektörün önde gelen firmalarına hizmet veren tesislerimiz',
+    image: '/images/aerial/aerial_6.jpg',
   },
 ]
 

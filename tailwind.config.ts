@@ -13,15 +13,18 @@ const config: Config = {
         brand: {
           red: '#E63946',
           'red-dark': '#C62E38',
-          dark: '#1A1A1A',
-          'dark-lighter': '#2A2A2A',
-          gray: '#808080',
+          dark: '#1b1b1b',
+          'dark-lighter': '#2a2a2a',
+          'dark-card': '#0e0e0e',
+          gray: '#999999',
           'gray-light': '#CCCCCC',
         },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
+        heebo: ['var(--font-heebo)', 'Heebo', 'system-ui', 'sans-serif'],
+        oswald: ['var(--font-oswald)', 'Oswald', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-oswald)', 'Oswald', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'display-xl': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],

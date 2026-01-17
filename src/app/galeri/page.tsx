@@ -30,8 +30,8 @@ const projects: Project[] = [
     area: '450 m²',
     description:
       'Kocaeli bölgesinde modern restoran konsepti ile hizmet veren KFC işletme projesi. Yüksek müşteri trafiğine uygun tasarım ve operasyonel verimlilik.',
-    image: '/images/projects/kfc.jpg',
-    images: ['/images/projects/kfc-1.jpg', '/images/projects/kfc-2.jpg'],
+    image: '/images/kfc_1.jpg',
+    images: ['/images/misc_2.jpg', '/images/misc_1.jpg'],
   },
   {
     id: 2,
@@ -42,8 +42,8 @@ const projects: Project[] = [
     area: '2.500 m²',
     description:
       'Modern akaryakıt istasyonu işletmesi. Enerji sektöründe sürdürülebilir çözümler ve yenilikçi hizmet anlayışı ile müşteri memnuniyeti odaklı operasyon.',
-    image: '/images/projects/shell.jpg',
-    images: ['/images/projects/shell-1.jpg', '/images/projects/shell-2.jpg'],
+    image: '/images/shell_flag.jpg',
+    images: ['/images/shell/shell_1.jpg', '/images/shell/shell_2.jpg'],
   },
   {
     id: 3,
@@ -54,8 +54,8 @@ const projects: Project[] = [
     area: '8.000 m²',
     description:
       'Prestijli otel yatırım ve işletme projesi. Uluslararası standartlarda konaklama hizmeti sunan, modern tasarım ve konfor odaklı tesis.',
-    image: '/images/projects/hilton.jpg',
-    images: ['/images/projects/hilton-1.jpg', '/images/projects/hilton-2.jpg'],
+    image: '/images/hero/project_15.jpg',
+    images: ['/images/hero/project_16.jpg', '/images/hero/project_17.jpg'],
   },
   {
     id: 4,
@@ -66,8 +66,8 @@ const projects: Project[] = [
     area: '42.000 m²',
     description:
       'Global lojistik operasyonlar için tasarlanmış modern depolama ve dağıtım merkezi. Yüksek teknoloji altyapısı ve verimli operasyonel süreçler.',
-    image: '/images/projects/dhl.jpg',
-    images: ['/images/projects/dhl-1.jpg', '/images/projects/dhl-2.jpg'],
+    image: '/images/hero/project_20.jpg',
+    images: ['/images/hero/project_22.jpg', '/images/hero/project_23.jpg'],
   },
   {
     id: 5,
@@ -78,20 +78,44 @@ const projects: Project[] = [
     area: '15.000 m²',
     description:
       'Perakende sektörünün önde gelen markası Migros için modern lojistik altyapı projesi. Soğuk zincir ve genel depolama alanları.',
-    image: '/images/projects/migros.jpg',
-    images: ['/images/projects/migros-1.jpg', '/images/projects/migros-2.jpg'],
+    image: '/images/hero/project_25.jpg',
+    images: ['/images/hero/project_26.jpg', '/images/hero/project_27.jpg'],
   },
   {
     id: 6,
-    title: 'Kayseri Mutfağı',
+    title: 'Endüstriyel Tesisler',
     category: 'Gayrimenkul',
-    client: 'Kayseri Mutfağı',
-    year: '2016',
-    area: '350 m²',
+    client: 'ABM Istanbul',
+    year: '2020',
+    area: '50.000 m²',
     description:
-      'Geleneksel Türk mutfağı konseptinde restoran işletme projesi. Müşteri deneyimi odaklı tasarım ve operasyonel mükemmellik.',
-    image: '/images/projects/kayseri.jpg',
-    images: ['/images/projects/kayseri-1.jpg', '/images/projects/kayseri-2.jpg'],
+      'Geniş alan endüstriyel tesisler. Modern altyapı ve teknoloji ile donatılmış, çok amaçlı kullanıma uygun tesisler.',
+    image: '/images/aerial/aerial_3.jpg',
+    images: ['/images/aerial/aerial_4.jpg', '/images/aerial/aerial_7.jpg'],
+  },
+  {
+    id: 7,
+    title: 'Shell Bodrum Tesisleri',
+    category: 'Enerji',
+    client: 'Shell',
+    year: '2019',
+    area: '3.000 m²',
+    description:
+      'Shell akaryakıt istasyonu bodrum kat tesisleri. Modern depolama ve lojistik altyapı.',
+    image: '/images/shell/shell_6.jpg',
+    images: ['/images/shell/shell_7.jpg', '/images/shell/shell_8.jpg'],
+  },
+  {
+    id: 8,
+    title: 'Kombine Tesisler',
+    category: 'Lojistik',
+    client: 'ABM Istanbul',
+    year: '2021',
+    area: '60.000 m²',
+    description:
+      'Shell, DHL ve Hilton projelerini bir arada barındıran kombine tesis kompleksi. Entegre operasyonel yönetim.',
+    image: '/images/hero/project.jpg',
+    images: ['/images/hero/project_10.jpg', '/images/hero/project_11.jpg'],
   },
 ]
 
